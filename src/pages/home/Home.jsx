@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer, About, Hero, Login} from '../../components/import'
+import { Footer, About, Hero, Login, Contact} from '../../components/import'
 
 const Home = () => {
   return (
@@ -7,6 +7,8 @@ const Home = () => {
       <Hero />
       <About />
       <Login />
+      <Contact />
+      <Footer />
     </div>
   )
 }
