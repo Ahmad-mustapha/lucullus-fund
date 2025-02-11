@@ -30,7 +30,7 @@ const Login = () => {
               <span className='absolute left-2 bottom-[10px] text-[17px]'><TfiLock /></span>
             </div>
             <div style={{marginTop: '.7rem'}} className='flex items-center justify-end'><Link className='font-[500] text-[15px]'>Forgot Password?</Link></div>
-            <div style={{marginTop: '1.4rem'}} className='flex items-center justify-center'><Link style={{padding: '1rem'}} className='bg-[#094C41] text-center rounded-[21px] font-[600] text-[15px] w-[185px]'>Login In</Link></div>
+            <div style={{marginTop: '1.4rem'}} className='flex items-center justify-center'><Link style={{padding: '1rem'}} className='bg-[#094C41] text-center rounded-[21px] font-[600] text-[15px] w-[185px]'>Log In</Link></div>
           </form>
         </div>
       </div>
