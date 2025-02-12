@@ -58,7 +58,7 @@ const Navbar = () => {
           }
         </ul>
       </nav>
-      <div className={`menu z-60 fixed top-8 right-[2rem] flex md:hideen flex-col gap-2 cursor-pointer`} onClick={ToggleMenu}>
+      <div className={`menu z-50 fixed top-8 right-[2rem] flex md:hideen flex-col gap-2 cursor-pointer`} onClick={ToggleMenu}>
           <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav? 'rotate-45 translate-y-[12px]': ''}`}></p>
           <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav? 'opacity-0': 'opacity-100'}`}></p>
           <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav? '-rotate-45 -translate-y-[8px]': ''}`}></p>

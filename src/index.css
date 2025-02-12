@@ -11,3 +11,48 @@ button{
   padding: 0;
   box-sizing: border-box;
 }
+.overlays{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100%;
+  cursor: pointer;
+  z-index: -10;
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+input, textarea{
+  @apply outline-hidden
+}
+.contact{
+  z-index: 10000;
+}
+.explore{
+  /* z-index: 100; */
+  /* width: 600px;
+  max-width: 90%; */
+  animation: popup .9s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+@keyframes popup {
+  from{
+      transform: scale(0);
+  }
+  to{
+      transform: scale(1);
+  }
+}
+textarea{
+  position: relative;
+}
+textarea::placeholder{
+  position: absolute;
+  bottom: .5rem;
+  right: .6rem;
+  color: black;
+  font-size: 11px;
+}
