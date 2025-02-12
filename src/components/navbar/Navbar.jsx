@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/lucullusLogo.png'
 import './navbar.css'
-
+import { useLocation } from 'react-router-dom'
 const items = [
   {id: 1, text: 'Home', link: '/'},
   {id: 1, text: 'About', link: '/#about'},
@@ -10,15 +10,15 @@ const items = [
 ]
 
 export const Sidebar = ({isOpen, setOpenNav}) =>(
-  <ul className={`flex flex-col items-center justify-center gap-10 text-[#094C41] text-[16px] h-screen w-[70%] sm:w-[50%] fixed right-0 top-0 z-50 transition-transform duration-500 bg-[#040b16] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+  <ul className={`flex flex-col items-center justify-center gap-10 text-[#094C41] text-[16px] h-screen w-[70%] sm:w-[50%] fixed right-0 top-0 z-50 transition-transform duration-500 bg-[#b4b3b3] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
     {
       items.map((item, index) =>(
         <li className='relative' key={index}>
           {
             item.link.startsWith('/#') ? (
-              <a className='eachlink' href="">{item.text}</a>
+              <a onClick={()=>setOpenNav(false)} href={item.link} className={`eachlink ${location.pathname === item.link ? 'active' : ''}`}>{item.text}</a>
             ):(
-              <Link className='eachlink'>{item.text}</Link>
+              <Link onClick={()=>setOpenNav(false)} to={item.link} className={`eachlink ${location.pathname === item.link ? 'active' : ''}`}>{item.text}</Link>
             )
           }
         </li>
@@ -30,7 +30,8 @@ export const Sidebar = ({isOpen, setOpenNav}) =>(
 const Navbar = () => {
   const [ openNav, setOpenNav ] = useState(false)
   const [ activeLink, setactiveLink ]= useState('')
-
+  const location = useLocation()
+  console.log(location)
   const handleActive = () =>{
     setactiveLink(link)
     setOpenNav(false)
@@ -41,16 +42,16 @@ const Navbar = () => {
   return (
     <div className=''>
       <nav style={{padding: '1rem 1.5rem'}} className='md:bg-white flex items-center h-[4.6rem] rounded-none md:rounded-[50px] justify-between px-10 py-2 w-full z-30 bg-transparent backdrop-blur-[10px] border-b-[#dfdfdf] border-b-[1px] fixed left-0 top-0 md:sticky md:top-4'>
-        <div><img src={Logo} alt="" /></div>
-        <ul className='hidden md:flex flex-row items-center gap-10 text-[#094C41] text-[16px]'>
+        <div><Link to={`/`}><img src={Logo} alt="" /></Link></div>
+        <ul className='hidden md:flex flex-row items-center gap-10 text-[#094C41] text-[16px] font-primary'>
           {
             items.map((item, index) =>(
               <li className='relative' key={index}>
                 {
                   item.link.startsWith('/#') ? (
-                    <a className='eachlink' href="">{item.text}</a>
+                    <a href={item.link} className={`eachlink ${location.pathname === item.link ? 'active' : ''}`}>{item.text}</a>
                   ):(
-                    <Link className='eachlink'>{item.text}</Link>
+                    <Link to={item.link} className={`eachlink ${location.pathname === item.link ? 'active' : ''}`}>{item.text}</Link>
                   )
                 }
               </li>

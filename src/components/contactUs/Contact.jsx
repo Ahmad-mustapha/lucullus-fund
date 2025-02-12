@@ -70,8 +70,7 @@ export const ContactUsForm = ({showContactUs, setShowContactUs}) =>(
 )
 
 
-const Contact = () => {
-  const [ showContactUs, setShowContactUs ] = useState(false)
+const Contact = ({ showContactUs, setShowContactUs }) => {
   return (
     <>
       <section style={{padding: '2rem'}} className='flex items-center gap-8 justify-center flex-wrap-reverse md:flex-nowrap'>

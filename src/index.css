@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-header: "Quattrocento", serif;
+}
+
+.font-primary {
+  @apply font-['Montserrat']
+}
+
+.font-header {
+  @apply font-['Quattrocento']
+}
 a {
   text-decoration: none;
 }
@@ -55,4 +67,19 @@ textarea::placeholder{
   right: .6rem;
   color: black;
   font-size: 11px;
+}
+.fund{
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+html{
+  scroll-behavior: smooth;
+}
+.pad{
+  padding: 2rem;
+}
+@media screen and (max-width: 640px) {
+  .pad{
+    padding: 1rem;
+  }
 }

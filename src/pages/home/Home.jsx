@@ -1,13 +1,17 @@
-import React from 'react'
 import { Footer, About, Hero, Login, Contact} from '../../components/import'
 
-const Home = () => {
+const Home = ({ showContactUs, setShowContactUs }) => {
   return (
     <div className=''>
-      <Hero />
+      <Hero 
+      title='The Lucullus Fund'
+      detail='Fundamental Research and Leading Edge AI working together for better Investment outcomes'
+      showContactUs={showContactUs} 
+      setShowContactUs={setShowContactUs} 
+      />
       <About />
       <Login />
-      <Contact />
+      <Contact showContactUs={showContactUs} setShowContactUs={setShowContactUs} />
       <Footer />
     </div>
   )
