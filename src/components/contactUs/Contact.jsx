@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ContactUs from '../../assets/lucullusAbout.png'
+import ContactUs from '../../assets/lucillusContact.png'
 import { Link } from 'react-router-dom'
 import { RxCross2 } from "react-icons/rx";
 

@@ -78,8 +78,14 @@ html{
 .pad{
   padding: 2rem;
 }
+.padlogin{
+  padding: 2rem;
+}
 @media screen and (max-width: 640px) {
   .pad{
     padding: 1rem;
+  }
+  .padlogin{
+    padding: 0;
   }
 }

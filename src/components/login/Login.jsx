@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TfiLock } from "react-icons/tfi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import './login.css'
+import Forgetpassword from '../forgetpassword/Forgetpassword';
 const Login = () => {
+  const [ showForgetPassword, setShowForgetPassword ] = useState(false)
   return (
-    <div style={{padding: '2rem'}}  className=''>
+    <div className='padlogin'>
       <div className='login flex flex-col items-center justify-center text-white'>
         <div className='flex flex-col items-center justify-center gap-4'>
           <h2 className='text-[29px] md:text-[49px] font-[700] text-center'>Investor Log In</h2>
@@ -29,12 +31,20 @@ const Login = () => {
               type="password" />
               <span className='absolute left-2 bottom-[10px] text-[17px]'><TfiLock /></span>
             </div>
-            <div style={{marginTop: '.7rem'}} className='flex items-center justify-end'><Link className='font-[500] text-[15px]'>Forgot Password?</Link></div>
+            <div style={{marginTop: '.7rem'}} className='flex items-center justify-end'>
+              <Link 
+              className='font-[500] text-[15px]'
+              onClick={()=> setShowForgetPassword(true)}
+              >Forgot Password?</Link></div>
             <div style={{marginTop: '1.4rem'}} className='flex items-center justify-center'><button style={{padding: '1rem'}} className='bg-[#094C41] text-center rounded-[100px] font-[600] text-[15px] w-[185px]'>Log In</button></div>
           </form>
         </div>
       </div>
-      
+      {
+        showForgetPassword && (
+          <Forgetpassword showForgetPassword={showForgetPassword} setShowForgetPassword={setShowForgetPassword}/>
+        )
+      }
     </div>
   )
 }

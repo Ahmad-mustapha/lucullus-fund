@@ -29,13 +29,12 @@ export const Sidebar = ({isOpen, setOpenNav}) =>(
 
 const Navbar = () => {
   const [ openNav, setOpenNav ] = useState(false)
-  const [ activeLink, setactiveLink ]= useState('')
+  // const [ activeLink, setactiveLink ]= useState('')
   const location = useLocation()
-  console.log(location)
-  const handleActive = () =>{
-    setactiveLink(link)
-    setOpenNav(false)
-  }
+  // const handleActive = () =>{
+  //   setactiveLink(link)
+  //   setOpenNav(false)
+  // }
   const ToggleMenu = () =>{
     setOpenNav(!openNav)
   }
